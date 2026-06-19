@@ -107,7 +107,7 @@ if st.sidebar.button("Launch Total Market Scan"):
             progress_bar.progress(index / len(tickers_to_scan))
             
         match = scan_zone_footprint(ticker, tf_period=period_mapping[timeframe], tf_interval=tf_mapping[timeframe])
-        if match:
+        
         # Display Output Table
     if results:
         results_df = pd.DataFrame(results)
