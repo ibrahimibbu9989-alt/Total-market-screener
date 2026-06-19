@@ -108,15 +108,12 @@ if st.sidebar.button("Launch Total Market Scan"):
             
         match = scan_zone_footprint(ticker, tf_period=period_mapping[timeframe], tf_interval=tf_mapping[timeframe])
         if match:
-            results.append(match)
-            
-    progress_bar.progress(1.0)
-    
-    # Display Output Table
+        # Display Output Table
     if results:
         results_df = pd.DataFrame(results)
         st.success(f"Scan complete! Spotted {len(results_df)} setups matching structural money patterns.")
         st.dataframe(results_df, use_container_width=True)
     else:
         st.info("No matching institutional footprints detected in current market configurations.")
-else: 
+else:
+    st.write("👈 Click *Launch Total Market Scan* on the sidebar control panel to trigger the engine across all instruments.")
